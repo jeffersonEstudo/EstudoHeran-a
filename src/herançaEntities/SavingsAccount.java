@@ -1,6 +1,6 @@
 package herançaEntities;
 
-public class SavingsAccount extends Account {
+public final class SavingsAccount extends Account {
 	private double interestRate;
 
 	public SavingsAccount() {
@@ -22,5 +22,9 @@ public class SavingsAccount extends Account {
 
 	public void updateBalance() {
 		balance += balance * interestRate;
+	}
+	@Override
+	public final void withdraw(double amount) {
+		balance -= amount;
 	}
 }
